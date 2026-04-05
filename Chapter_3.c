@@ -94,3 +94,33 @@ int main(void)
     printf("     signed:%3u bytes \n", sizeof(signed)); /* 4 */
     return 0;
 }
+
+/* 3.9 */
+#include <stdio.h>
+
+#define  EOF   (-1)
+
+int main(void)
+{
+    int  c;
+
+    while ((c = getchar()) != EOF) { /* input something/enter Ctrl + C to terminate */
+        putchar(c);
+        putchar(c);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int  c;
+
+    while ((c = getchar()) != EOF)
+       if (c >= 'a' && c <= 'z')
+          putchar(c + 'A' - 'a');
+       else putchar(c);
+
+    return 0;
+}
