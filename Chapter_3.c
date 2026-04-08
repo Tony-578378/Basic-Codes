@@ -158,3 +158,15 @@ int main(void)
     printf("\nBye!\n\n");
        return 0;
 }
+
+/* 3.11 */
+#include <stdio.h>
+
+int main(void)
+{
+   char   c = 'A'; /* integral ptomotion from char to int */
+
+   printf("%c\n", c);
+   printf("%d\n", c);
+   return 0;
+}
