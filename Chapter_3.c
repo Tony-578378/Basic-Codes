@@ -185,3 +185,39 @@ int main(void)
    printf("%d\n", 0x1FfFFf); /* 2097151 */
    return 0;
 }
+
+/* 1 */
+#include <stdio.h>
+
+int main(void)
+{
+   double  x = 123.45123451234512345;
+   double  y = 123.45123451234512300; /* last two digits zero */
+
+   printf("%.17f\n%.17f\n", x, y);
+   return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+   double  x = 123.45123451234512345;
+   double  y = 123.45123451234510000; /* last four digits zero */
+
+   printf("%.17f\n%.17f\n", x, y); /* different results */
+   return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+   double  x = 123.45123451234512345;
+   double  y = 123.45123451234512000; /* last three digits zero */
+
+   printf("%.17f\n%.17f\n", x, y);
+   return 0;
+}
+/* The initialiser for y must end with 4 zeros to get different numbers printed. Because a double stores 15 significant digits,
+and the digits beyond this cannot be stored properly. 3 digits of difference is still non-significant to make a difference while 4 digits are enough. */
