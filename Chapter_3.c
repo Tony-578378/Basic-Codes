@@ -221,3 +221,37 @@ int main(void)
 }
 /* The initialiser for y must end with 4 zeros to get different numbers printed. Because a double stores 15 significant digits,
 and the digits beyond this cannot be stored properly. 3 digits of difference is still non-significant to make a difference while 4 digits are enough. */
+
+/* 2 */
+/* Test whether sin^2(x) + cos^2(x) = 1 holds. */
+#include <math.h>
+#include <stdio.h>
+
+int main(void)
+{
+   double   two_pi = 2.0 * M_PI;   /* in math.h */
+   double   h      = 0.1;          /* step size */
+   double   x;
+
+   for (x = 0.0; x < two_pi; x += h)
+      printf("%5.1f: %.15e\n",     /* e means in exponential form */
+         x, sin(x) * sin(x) + cos(x) * cos(x));
+      return 0;
+}
+/* It approximately holds. */
+/* Now change %.15e to %.15f. */
+#include <math.h>
+#include <stdio.h>
+
+int main(void)
+{
+   double   two_pi = 2.0 * M_PI;
+   double   h      = 0.1;
+   double   x;
+
+   for (x = 0.0; x < two_pi; x += h)
+      printf("%5.1f: %.15f\n",
+         x, sin(x) * sin(x) + cos(x) * cos(x));
+      return 0;
+}
+/* It perfectly holds. Because a float stores fewer digits than an exponential number. */
