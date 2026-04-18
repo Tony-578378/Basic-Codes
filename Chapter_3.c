@@ -255,3 +255,20 @@ int main(void)
       return 0;
 }
 /* It perfectly holds. Because a float stores fewer digits than an exponential number. */
+
+/* 3 */
+/* A table of trigonometric values for sin(), cos(), and tan(). The angles in the table go from 0 to 2*pi in 20 steps.*/
+#include <math.h>
+#include <stdio.h>
+
+int main(void)
+{
+   double   two_pi = 2.0 * M_PI;
+   double   h      = M_PI/10.0; /* step size */
+   double   x;
+
+   for (x = 0.0; x < two_pi; x += h)
+      printf("sinx: %.15f cosx: %.15f tanx: %.15f\n",
+         sin(x), cos(x), tan(x));
+   return 0;
+}
