@@ -272,3 +272,16 @@ int main(void)
          sin(x), cos(x), tan(x));
    return 0;
 }
+
+/* 6 */
+#include <stdio.h>
+
+int main(void)
+{
+   int   big_big = 2000000000 + 2000000000 ;
+
+   printf("%d   %u\n", big_big, big_big);
+   return 0;
+}
+/* The output is -294967296 with type "int" but the correct 4000000000 with type "unsigned". Because although both "int" and "unsigned"
+are 4-byte, an "int" allows negative values but an "unsigned" does not, so the answer overflows for an "int" but not for an "unsigned". */
