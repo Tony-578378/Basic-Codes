@@ -285,3 +285,37 @@ int main(void)
 }
 /* The output is -294967296 with type "int" but the correct 4000000000 with type "unsigned". Because although both "int" and "unsigned"
 are 4-byte, an "int" allows negative values but an "unsigned" does not, so the answer overflows for an "int" but not for an "unsigned". */
+
+/* 8 */
+/* Find the value of "epsilon" in my machine. */
+/* start with 1e-37 */
+#include <stdio.h>
+
+int main(void)
+{
+   double  eps = 1e-37;
+
+   if (1.0 < 1.0 + eps)
+       printf("True\n");
+   else
+       printf("False\n");
+   
+   return 0;
+}
+/* It is false. */
+/* Now find the true value of eps. */
+#include <stdio.h>
+
+int main(void)
+{
+   double  eps = 1.0;
+
+   /* Keep dividing by 2 until 1.0 + eps is no longer greater than 1.0. */
+   while (1.0 + eps > 1.0) {
+      eps = eps / 2.0;
+   }
+   eps = eps * 2.0; /* The last one is too small so double it. */
+   printf("The value of epsilon in my machine is %.20e\n", eps);
+   return 0;
+}
+/* It is about 2.22044604925031308085e-16. */
