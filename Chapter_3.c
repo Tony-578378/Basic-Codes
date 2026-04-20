@@ -319,3 +319,25 @@ int main(void)
    return 0;
 }
 /* It is about 2.22044604925031308085e-16. */
+
+/* 9 */
+#include <math.h>
+#include <stdio.h>
+
+double   f(double x);
+
+int main(void)
+{
+   double   x;
+
+   for (x = -0.25; x <= +0.25; x += 0.01)
+      printf("f(%+.2f) = %+.15f\n", x, f(x));
+   return 0;
+}
+
+double f(double x)
+{
+   return (tan(sin(x)) - sin(tan(x)));
+}
+/* The results are almost 0, which means the difference between tan(sin(x)) and sin(tan(x)) is very flat. 
+This can be reflected that the first 7 terms of their Taylor expansions agree. */
