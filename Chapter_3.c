@@ -341,3 +341,22 @@ double f(double x)
 }
 /* The results are almost 0, which means the difference between tan(sin(x)) and sin(tan(x)) is very flat. 
 This can be reflected that the first 7 terms of their Taylor expansions agree. */
+
+/* 10 */
+#include <stdio.h>
+
+int main(void)
+{
+   char           c = -1;
+   signed char    s = -1;
+   unsigned char  u = -1;
+
+   printf("c = %d  s = %d  u = %d\n", c, s, u);
+   return 0;
+}
+/* c = -1  s = -1  u = 255 */
+/* So a plain char is treated as signed. */
+/* Then try
+gcc -funsigned-char program.c -o program
+./program */
+/* There could be such a programme in some ANSI C compilers, which can change a plain char to an unsigned char, but not in VS code.*/
