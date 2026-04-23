@@ -360,3 +360,15 @@ int main(void)
 gcc -funsigned-char program.c -o program
 ./program */
 /* There could be such a programme in some ANSI C compilers, which can change a plain char to an unsigned char, but not in VS code.*/
+
+/* 14 */
+#include <stdio.h>
+
+int main(void)
+{
+   printf("sizeof('A') = %u\n", sizeof('A'));
+   return 0;
+}
+/* warning: format specifies type 'unsigned int' but the argument has type 'unsigned long' */
+/* The value is 4. */
+/* See the file char.cpp to compare the patterns of C and C++. */
