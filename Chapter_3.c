@@ -372,3 +372,18 @@ int main(void)
 /* warning: format specifies type 'unsigned int' but the argument has type 'unsigned long' */
 /* The value is 4. */
 /* See the file char.cpp to compare the patterns of C and C++. */
+
+/* 15 */
+#include <stdio.h>
+
+int main(void)
+{
+   char   c = 'A';
+
+   printf("sizeof(c)       = %u\n", sizeof(c));        /* 1, char */
+   printf("sizeof('A')     = %u\n", sizeof('A'));      /* 4, unsigned long */
+   printf("sizeof(c + c)   = %u\n", sizeof(c + c));    /* 4, unsigned long */
+   printf("sizeof(c = 'A') = %u\n", sizeof(c = 'A'));  /* 1, char, because 'A' has been defined to be a char, c */
+
+   return 0;
+}
