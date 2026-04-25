@@ -387,3 +387,53 @@ int main(void)
 
    return 0;
 }
+
+/* 16 */
+#include <stdio.h>
+#include <limits.h>
+
+int main(void)
+{
+   printf("Minimum value of unsigned long stored in my system: %lu\n", 0UL);       /* 0 */
+   printf("Maximum value of unsigned long stored in my system: %lu\n", ULONG_MAX); /* 18446744073709551615 */
+
+   return 0;
+}
+
+/* 17 */
+#include <limits.h>         /* for UNIT_MAX */
+#include <stdio.h>
+
+int main(void)
+{
+   int        i;
+   unsigned   u = UINT_MAX; /* typically 4294967295 or 65535 */
+
+   for (i = 0; i < 10; ++i)
+      printf("%u + %d = %u\n", u, i, u + i);
+   for (i = 0; i < 10; ++i)
+      printf("%u * %d = %u\n", u, i, u * i);
+   return 0;
+}
+/* 4294967295 + 0 = 4294967295
+4294967295 + 1 = 0
+4294967295 + 2 = 1
+4294967295 + 3 = 2
+4294967295 + 4 = 3
+4294967295 + 5 = 4
+4294967295 + 6 = 5
+4294967295 + 7 = 6
+4294967295 + 8 = 7
+4294967295 + 9 = 8
+4294967295 * 0 = 0
+4294967295 * 1 = 4294967295
+4294967295 * 2 = 4294967294
+4294967295 * 3 = 4294967293
+4294967295 * 4 = 4294967292
+4294967295 * 5 = 4294967291
+4294967295 * 6 = 4294967290
+4294967295 * 7 = 4294967289
+4294967295 * 8 = 4294967288
+4294967295 * 9 = 4294967287 */
+/* For unsigned int, C uses arithmetic modulo: UINT_MAX + 1 wraps around to 0. If UINT_MAX = 4294967295, 
+then arithmetic is modulo: 4294967296. For multiplication, UINT_MAX = -1 mod 4294967296 = 4294967295.*/
