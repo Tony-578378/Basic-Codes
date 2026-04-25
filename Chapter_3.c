@@ -436,4 +436,5 @@ int main(void)
 4294967295 * 8 = 4294967288
 4294967295 * 9 = 4294967287 */
 /* For unsigned int, C uses arithmetic modulo: UINT_MAX + 1 wraps around to 0. If UINT_MAX = 4294967295, 
-then arithmetic is modulo: 4294967296. For multiplication, UINT_MAX = -1 mod 4294967296 = 4294967295.*/
+then arithmetic is modulo: 4294967296. For multiplication, UINT_MAX = -1 mod 4294967296 = 4294967295, 
+UINT_MAX * 2 = -2 mod 4294967296 = 4294967294. */
