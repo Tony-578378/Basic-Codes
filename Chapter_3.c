@@ -450,3 +450,4 @@ int main(void)
    printf("x = %e  y = %e\n", x, y); /* x = 1.000000e+307  y = inf */
    return 0;
 }
+/* Since y = inf, my compiler (VS Code) is following ANSI/IEEE Std 754-1985. */
