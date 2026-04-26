@@ -451,3 +451,35 @@ int main(void)
    return 0;
 }
 /* Since y = inf, my compiler (VS Code) is following ANSI/IEEE Std 754-1985. */
+
+/* 20 */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+   printf("sqrt(-1.0) = %f\n", sqrt(-1.0));
+   return 0;
+}
+/* nan (NaN) is printed, since the result is imaginary.*/
+
+/* 21 */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+   double   x;
+
+   for (x = 1; ; x++) {
+      double y = pow(x, x);
+
+      if (isinf(y)) { /* Stop printing when the result is infinite. */
+         printf("Largest integer x = %.0f\n", x - 1); /* Largest integer x = 143 */
+         break;
+      }
+
+      printf("pow(%.1f, %.1f) = %.7e\n", x, x, pow(x, x));
+   }
+   return 0;
+}
