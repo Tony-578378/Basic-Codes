@@ -438,3 +438,15 @@ int main(void)
 /* For unsigned int, C uses arithmetic modulo: UINT_MAX + 1 wraps around to 0. If UINT_MAX = 4294967295, 
 then arithmetic is modulo: 4294967296. For multiplication, UINT_MAX = -1 mod 4294967296 = 4294967295, 
 UINT_MAX * 2 = -2 mod 4294967296 = 4294967294, etc. */
+
+/* 18 */
+#include <stdio.h>
+
+int main(void)
+{
+   double  x = 1e+307;              /* big */
+   double  y = x * x;               /* too big! */
+
+   printf("x = %e  y = %e\n", x, y); /* x = 1.000000e+307  y = inf */
+   return 0;
+}
