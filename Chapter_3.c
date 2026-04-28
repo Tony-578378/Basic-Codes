@@ -483,3 +483,30 @@ int main(void)
    }
    return 0;
 }
+
+/* 22 */
+#include <stdio.h>
+
+int main(void)
+{
+   float   x = 1.0, y = 2.0;
+
+   printf("%s%u\n%s%u\n%s%u\n",
+      "sizeof(float)  = ", sizeof(float),  /* 4 */
+      "sizeof(double) = ", sizeof(double), /* 8 */
+      "sizeof(x + y)  = ", sizeof(x + y)); /* 4 */
+
+   return 0;
+}
+/* This shows my compiler perform arithmetic on floats without any widening, rather than promoting a float to a double. */
+
+/* 23 */
+/* #include <stdio.h>
+
+int main(void)
+{
+   printf("sizeof(long float) = %lf", sizeof(long float));
+
+   return 0;
+}
+/* My ANSI C has eliminated long float, as well as %lf. */
