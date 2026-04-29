@@ -510,3 +510,19 @@ int main(void)
    return 0;
 }
 /* My ANSI C has eliminated long float, as well as %lf. */
+
+/* 25 */
+#include <math.h>      /* for fabs(), absolute value of a floating-point number */
+#include <stdio.h>
+#include <stdlib.h>    /* for abs() */
+
+int main(void)
+{
+   double   x = -2.357;
+
+   printf(" abs(x) = %e\n", abs(x));    /* wrong! */ /* A warning says: using integer absolute value function 'abs' when argument is of floating point type. */
+   printf("fabs(x) = %e\n", fabs(x));
+   return 0;
+}
+/* abs(x) = 6.951669e-310, wrong. */
+/* fabs(x) = 2.357000e+00 */
