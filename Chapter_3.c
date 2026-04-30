@@ -526,3 +526,36 @@ int main(void)
 }
 /* abs(x) = 6.951669e-310, wrong. */
 /* fabs(x) = 2.357000e+00 */
+
+/* 26 */
+/* From hexadecimal to decimal */
+#include <stdio.h>
+
+int main(void)
+{
+   int   a = 0xabc;
+   int   b = 0xABc;
+   int   c = 0XABC;
+
+   printf("a = %d   b = %d   c = %d\n", a, b, c);
+   return 0;
+}
+/* a = 2748   b = 2748   c = 2748. So capital and lower-case letters are equivalent for a hexadecimal number. */
+
+/* 27 */
+#include <stdio.h>
+
+int main(void)
+{
+   char   c = 0xff;
+
+   if (c == 0xff)
+      printf("Truth!\n");
+   else
+      printf("This needs to be explained!\n");
+   
+   return 0;
+}
+/* This needs to be explained! */
+/* Because c is treated as char, and 0xff = 255 in decimal. But char is 1 byte, so it cannot store 255. Then 255 is wrapped around -1. Therefore, the argument 
+c == 0xff now means -1 = 255, which is false. */
