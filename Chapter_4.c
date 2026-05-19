@@ -58,3 +58,48 @@ int main(void)
 
     return 0;
 }
+
+/* 4.6 */
+#include <stdio.h>
+
+int main() {
+    char c;
+    int lc_cnt = 0;
+    int other_cnt = 0;
+
+    printf("Enter characters (then Ctrl+D to continue on Mac/Linux or Ctrl+Z on Windows):");
+
+    while (scanf("%c", &c) != EOF) {
+
+        if (c >= 'a' && c <= 'z')
+            ++lc_cnt;
+        else {
+            ++other_cnt;
+            printf("\n%c is not a lowercase letter\n", c);
+        }
+    }
+
+    printf("\nNumber of lowercase letters: %d\n", lc_cnt);
+    printf("Number of other characters: %d\n", other_cnt);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int a, b;
+
+    printf("Enter a:");
+    scanf("%d", &a);
+    printf("Enter b:");
+    scanf("%d", &b);
+    if (a == 1)
+       if (b == 2)
+          printf("***\n");
+    else                  /* This else statement still attaches to the nearest if, not the one in-line with it. */
+       printf("###\n");
+    
+    return 0;
+}
