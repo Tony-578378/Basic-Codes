@@ -17,7 +17,7 @@ int main(void)
    char   c = 'A';
 
    printf("sizeof(c)       = %u\n", sizeof(c));        // 1, char
-   printf("sizeof('A')     = %u\n", sizeof('A'));      // 1, chae
+   printf("sizeof('A')     = %u\n", sizeof('A'));      // 1, char
    printf("sizeof(c + c)   = %u\n", sizeof(c + c));    // 4, unsigned long
    printf("sizeof(c = 'A') = %u\n", sizeof(c = 'A'));  // 1, char
 
