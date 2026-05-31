@@ -125,6 +125,6 @@ int main(void)
                       ++cnt, b1, b2, b3, b4, b5,
                       b1 || b3 || b5, b1 && b2 || b4 && b5,
                       b1 + b2 + b3 + b4 + b5 >= 3); /* all combinations of b1, b2, b3, b4, b5 = 0 or 1 get printed */
-    putchar('\n');
+    putchar('\n'); /* add a new blank line */
     return 0;
 }
