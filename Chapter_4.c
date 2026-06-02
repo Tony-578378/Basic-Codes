@@ -128,3 +128,51 @@ int main(void)
     putchar('\n'); /* add a new blank line */
     return 0;
 }
+
+/* 4.12 */
+#include <stdio.h>
+
+int main(void)
+{
+    int i, sum;
+    i = 0;
+    sum = 0;
+    /* sum a series of integer inputs until 0 is input */
+    do {
+        sum += i;
+        scanf("%d", &i);
+    } while (i > 0);
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int n, error;
+    
+    do {
+        printf("Input a positive integer: ");
+        scanf("%d", &n);
+        if (error = (n <= 0))
+           printf("\nERROR: Do it again!\n\n");
+    } while (error);
+    return 0;
+}
+
+/* A test that fails. */
+#include <stdio.h>
+
+int main(void)
+{
+    int     cnt = 0;
+    double  sum = 0.0, x;
+
+    for (x = 0.0; x != 9.9; x += 0.1) { /* trouble! infinite loop! */
+        sum += x;
+        printf("cnt = %5d\n", ++cnt);
+    }
+    printf("sum = %f\n", sum);
+    return 0;
+}
