@@ -202,3 +202,23 @@ int main(void)
     }
     return 0;
 }
+
+/* 4.14 */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    double  x;
+
+    printf("Enter x: ");
+    while (scanf("%lf", &x) == 1) {
+        if (x < 0.0)
+           goto negative_alert; /* The goto statement should be avoided in general. */
+        printf("%f  %f\n", sqrt(x), sqrt(2 * x));
+        printf("Enter x: ");
+    }
+
+    negative_alert: printf("Negative value encountered!\n");
+    return 0;
+}
