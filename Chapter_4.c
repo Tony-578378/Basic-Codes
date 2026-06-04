@@ -222,3 +222,42 @@ int main(void)
     negative_alert: printf("Negative value encountered!\n");
     return 0;
 }
+
+/* 4.15 */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    double  x;
+
+    printf("Enter x: ");
+    while(1) {
+        scanf("%lf", &x);
+        if (x < 0.0)
+           break;               /* exit loop if x is negative */
+        printf("%f\n", sqrt(x));
+    }
+/* break jumps to here */
+    return 0;
+}
+
+#include <stdio.h>
+#define TOTAL 9
+
+int main(void)
+{
+    int   i;
+    char  c;
+
+    printf("Enter c: ");
+    for (i = 0; i < TOTAL; ++i) {
+       c = getchar();
+       if (c >= '0' && c <= '9')
+          continue;
+    printf("%c : %d\n", c, c);
+                   /*  process other characters */
+    /* continue transfers control to here to begin next iteration */
+    }
+    return 0;
+}
