@@ -261,3 +261,14 @@ int main(void)
     }
     return 0;
 }
+
+/* 4.17 */
+#include <stdio.h>
+
+int main(void)
+{
+    int  x, y = 1, z = 3;
+
+    x = (y < z) ? y : z; /* This assigns to x the minimum of y and z. */
+    printf("%d\n", x);
+}
