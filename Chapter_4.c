@@ -272,3 +272,7 @@ int main(void)
     x = (y < z) ? y : z; /* This assigns to x the minimum of y and z. */
     printf("%d\n", x);
 }
+
+/* Exercises */
+/* 3 */
+/* See the program read_char.c */
