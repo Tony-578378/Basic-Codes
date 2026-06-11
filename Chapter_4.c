@@ -276,3 +276,37 @@ int main(void)
 /* Exercises */
 /* 3 */
 /* See the program read_char.c */
+
+/* 5 */
+/* This programme computes a 17% federal withholding tax and a 3% state withholding tax from salaries,
+as well as the cumulative sums of all salaries and taxes. */
+#include <stdio.h>
+
+int main(void)
+{
+    double  salary;
+    double  federalTax, stateTax;
+    double  totalSalary = 0.0, totalFederalTax = 0.0, totalStateTax = 0.0;
+
+    printf("Enter salaries (stop if non-numeric input):\n");
+
+    while (scanf("%lf", &salary) ==1)
+    {
+        federalTax = salary * 0.17;
+        stateTax = salary * 0.03;
+        
+        printf("Salary: %.2f, Federal Tax: %.2f, State Tax: %.2f\n",
+               salary, federalTax, stateTax);
+
+        totalSalary += salary;
+        totalFederalTax += federalTax;
+        totalStateTax += stateTax;
+    }
+
+    printf("\nTotals:\n");
+    printf("Total Salaries     = %.2f\n", totalSalary);
+    printf("Total Federal Tax  = %.2f\n", totalFederalTax);
+    printf("Total State Tax    = %.2f\n", totalStateTax);
+
+    return 0;
+}
