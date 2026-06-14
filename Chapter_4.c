@@ -310,3 +310,19 @@ int main(void)
 
     return 0;
 }
+
+/* 8 */
+#include <stdio.h>
+
+int main(void)
+{
+    char     c = 'A';
+    double   x = 1e+33, y = 0.001;
+
+    printf("%d %d %d\n", c == 'a', c == 'b', c != 'c'); /* 0 0 1 */
+    printf("%d\n", c == 'A' && c <= 'B' || 'C');/* 1 */
+    printf("%d\n", 1 != !!c == !!!c);/* 1, because 1 != 0 */
+    printf("%d\n", x + y > x - y);/* 0, so the value of y is neglected */
+
+    return 0;
+}
