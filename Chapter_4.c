@@ -326,3 +326,21 @@ int main(void)
 
     return 0;
 }
+
+/* 10 */
+/*#include <stdio.h>
+#define LIMIT 9
+
+int main(void)
+{
+    int  i = 1;
+    int  j;
+
+    while (++i < LIMIT) do {
+        j = 2 * i + 3;
+        printf("j = %d\n", j);
+    }
+
+    return 0;
+}*/
+/* This programme leads to an error, because do is considered as another loop in C, while in many other languages do is together with the while loop. */
