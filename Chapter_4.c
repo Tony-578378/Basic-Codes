@@ -344,3 +344,65 @@ int main(void)
     return 0;
 }*/
 /* This programme leads to an error, because do is considered as another loop in C, while in many other languages do is together with the while loop. */
+
+/* 13 */
+/* Read in an integer value for n and then sums the integers from n to 2 * n if n is nonnegative, or from 2 * n to n if n is negative. */
+#include <stdio.h>
+
+int main(void)
+{
+    int  n, i;
+    long sum = 0;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+    
+    if (n >= 0)
+    {
+        for (i = n; i <= 2 * n; i++)
+            sum += i;
+    }
+    else
+    {
+        for (i = 2 * n; i <= n; i++)
+            sum += i;
+    }
+
+    printf("Sum = %ld\n", sum);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int  n, i;
+    long sum = 0;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+    
+    if (n >= 0)
+    {
+        i = n;
+
+        while (i <= 2 * n)
+        {
+            sum += i;
+            i++;
+        }
+    }
+    else
+    {
+        i = n;
+
+        while (i >= 2 * n)
+        {
+            sum += i;
+            i--;
+        }
+    }
+
+    printf("Sum = %ld\n", sum);
+    return 0;
+}
