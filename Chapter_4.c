@@ -406,3 +406,15 @@ int main(void)
     printf("Sum = %ld\n", sum);
     return 0;
 }
+
+/* 14 */
+#include <stdio.h>
+
+int main(void)
+{
+    for (putchar('1'); putchar('2'); putchar('3')) /* intialisation:print 1, condition:print 2, body:print 4, increment:print 3*/
+       putchar('4');
+
+    return 0;
+}
+/* an infinite output of 12431243... */
