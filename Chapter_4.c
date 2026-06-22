@@ -453,3 +453,78 @@ int main(void)
 
     return 0;
 }
+
+/* 17 */
+#include <stdio.h>
+
+int main(void)
+{
+    int  i, j, cnt, odd_sum = 0, even_sum = 0, n;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+    
+    for (cnt = 0, i = 1, j = 2; cnt < n; ++cnt, i += 2, j += 2)
+       odd_sum += i, even_sum += j;
+    
+    printf("Sum of the first %d even integers = %d\n", n, even_sum);
+    printf("Sum of the first %d odd integers = %d\n", n, odd_sum);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int n;
+    int odd_sum = 0, even_sum = 0;
+    int i;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= 2 * n - 1; i += 2)
+    {
+        odd_sum += i;
+    }
+
+    for (i = 2; i <= 2 * n; i += 2)
+    {
+        even_sum += i;
+    }
+
+    printf("Sum of first %d even integers = %d\n", n, even_sum);
+    printf("Sum of first %d odd integers = %d\n", n, odd_sum);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int n;
+    int odd_sum = 0, even_sum = 0;
+    int cnt = 0;
+    int odd = 1;
+    int even = 2;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    while (cnt < n)
+    {
+        odd_sum += odd;
+        even_sum += even;
+
+        odd += 2;
+        even += 2;
+        cnt++;
+    }
+
+    printf("Sum of first %d even integers = %d\n", n, even_sum);
+    printf("Sum of first %d odd integers = %d\n", n, odd_sum);
+
+    return 0;
+}
