@@ -528,3 +528,60 @@ int main(void)
 
     return 0;
 }
+
+/* 18 */
+#include <stdio.h>
+
+int main(void)
+{
+    int  i, j, cnt, odd_sum = 0, even_sum = 0, n, error = 1;
+
+    do {
+        printf("Input a positive integer: ");
+        scanf("%d", &n);
+        
+        error = (n <= 0);
+
+        if (error)
+            printf("\nERROR: Do it again!\n\n");
+
+    } while (error);
+    
+    for (cnt = 0, i = 1, j = 2; cnt < n; ++cnt, i += 2, j += 2)
+       odd_sum += i, even_sum += j;
+    
+    printf("Sum of the first %d even integers = %d\n", n, even_sum);
+    printf("Sum of the first %d odd integers = %d\n", n, odd_sum);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int i, j, cnt, odd_sum = 0, even_sum = 0, n;
+    int error = 1;
+
+    while (error)
+    {
+        printf("Input a positive integer: ");
+        scanf("%d", &n);
+
+        error = (n <= 0);
+
+        if (error)
+            printf("\nERROR: Do it again!\n\n");
+    }
+
+    for (cnt = 0, i = 1, j = 2; cnt < n; ++cnt, i += 2, j += 2)
+    {
+        odd_sum += i;
+        even_sum += j;
+    }
+
+    printf("Sum of the first %d even integers = %d\n", n, even_sum);
+    printf("Sum of the first %d odd integers = %d\n", n, odd_sum);
+
+    return 0;
+}
