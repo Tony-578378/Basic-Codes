@@ -585,3 +585,24 @@ int main(void)
 
     return 0;
 }
+
+/* 19 */
+#include <stdio.h>
+
+int main(void)
+{
+    while(1)
+       printf(" TRUE FOREVER ");
+
+    return 0;
+}
+/* equivalent programme */
+#include <stdio.h>
+
+int main(void)
+{
+    for( ; 1 ; )
+       printf(" TRUE FOREVER ");
+
+    return 0;
+}
