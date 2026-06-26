@@ -606,3 +606,18 @@ int main(void)
 
     return 0;
 }
+
+/* 20 */
+#include <stdio.h>
+
+int main(void)
+{
+    int   a = 0, b = 0, x;
+
+    x = 0 && (a = b = 777);
+    printf("%d %d %d\n", a, b, x); /* 0 0 0 */
+    x = 777 || (a = ++b);
+    printf("%d %d %d\n", a, b, x); /* 0 0 1 */
+
+    return 0;
+}
