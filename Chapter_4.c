@@ -621,3 +621,91 @@ int main(void)
 
     return 0;
 }
+
+/* 22 */
+/* left table */
+#include <stdio.h>
+
+int main(void)
+{
+    int i;
+
+    printf("Enter i (1-3): ");
+    scanf("%d", &i);
+
+    if (i == 1)
+    {
+        printf("statement_1 executed\n");
+    }
+    else if (i == 2)
+    {
+        printf("statement_2 executed\n");
+    }
+    else if (i == 3)
+    {
+        printf("statement_3 executed\n");
+    }
+    else
+    {
+        printf("Invalid input\n");
+    }
+
+    return 0;
+}
+/* middle table */
+#include <stdio.h>
+
+int main(void)
+{
+    int i;
+
+    printf("Enter i (1-3): ");
+    scanf("%d", &i);
+
+    if (i == 1)
+    {
+        printf("statement_2 executed\n");
+    }
+    else if (i == 2)
+    {
+        printf("statement_1 executed\n");
+        printf("statement_3 executed\n");
+    }
+    else if (i == 3)
+    {
+        printf("statement_1 executed\n");
+    }
+    else
+    {
+        printf("Invalid input\n");
+    }
+
+    return 0;
+}
+/* right table */
+#include <stdio.h>
+
+int main(void)
+{
+    int i;
+
+    printf("Enter i (1-3): ");
+    scanf("%d", &i);
+
+    if (i == 1 || i == 2)
+    {
+        printf("statement_1 executed\n");
+        printf("statement_2 executed\n");
+    }
+    else if (i == 3)
+    {
+        printf("statement_2 executed\n");
+        printf("statement_3 executed\n");
+    }
+    else
+    {
+        printf("Invalid input\n");
+    }
+
+    return 0;
+}
