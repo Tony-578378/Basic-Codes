@@ -709,3 +709,31 @@ int main(void)
 
     return 0;
 }
+
+/* 23 */
+/* Print the square root of the discriminant of a polynomial pf at most degree 2. */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    double  a, b, c;
+    
+    printf("Input a: ");
+    scanf("%lf", &a);
+    printf("Input b: ");
+    scanf("%lf", &b);
+    printf("Input c: ");
+    scanf("%lf", &c);
+
+    if (pow(b, 2) - 4 * a * c >= 0)
+    {
+        printf("sqrt(pow(b, 2) - 4 * a * c) is %.6f.\n", sqrt(pow(b, 2) - 4 * a * c));
+    }
+    else
+    {
+        printf("sqrt(pow(b, 2) - 4 * a * c) is i*%.6f.\n", sqrt(-(pow(b, 2) - 4 * a * c)));
+    }
+
+    return 0;
+}
