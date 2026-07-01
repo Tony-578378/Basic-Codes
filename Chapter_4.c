@@ -793,14 +793,60 @@ int main() {
 }
 
 /* 25 */
+/* (a) */
 #include <stdio.h>
 
 #define BOOLEX (b1 || b2 || b3 || b4)
-/* change this line for each question:
-   (a) (b1 || b2 || b3 || b4)
-   (b) (b1 && b2 && b3 && b4)
-   (c) (!(!b1 || b2) && (!b3 || b4))
-*/
+
+int main(void)
+{
+    int b1, b2, b3, b4;
+
+    printf("%5s%5s%5s%5s%8s\n",
+           "b1", "b2", "b3", "b4", "value");
+
+    for (b1 = 0; b1 <= 1; b1++)
+        for (b2 = 0; b2 <= 1; b2++)
+            for (b3 = 0; b3 <= 1; b3++)
+                for (b4 = 0; b4 <= 1; b4++)
+                    printf("%5c%5c%5c%5c%8c\n",
+                           b1 ? 'T' : 'F',
+                           b2 ? 'T' : 'F',
+                           b3 ? 'T' : 'F',
+                           b4 ? 'T' : 'F',
+                           BOOLEX ? 'T' : 'F');
+
+    return 0;
+}
+/* (b) */
+#include <stdio.h>
+
+#define BOOLEX (b1 && b2 && b3 && b4)
+
+int main(void)
+{
+    int b1, b2, b3, b4;
+
+    printf("%5s%5s%5s%5s%8s\n",
+           "b1", "b2", "b3", "b4", "value");
+
+    for (b1 = 0; b1 <= 1; b1++)
+        for (b2 = 0; b2 <= 1; b2++)
+            for (b3 = 0; b3 <= 1; b3++)
+                for (b4 = 0; b4 <= 1; b4++)
+                    printf("%5c%5c%5c%5c%8c\n",
+                           b1 ? 'T' : 'F',
+                           b2 ? 'T' : 'F',
+                           b3 ? 'T' : 'F',
+                           b4 ? 'T' : 'F',
+                           BOOLEX ? 'T' : 'F');
+
+    return 0;
+}
+/* (c) */
+#include <stdio.h>
+
+#define BOOLEX (!(!b1 || b2) && (!b3 || b4))
 
 int main(void)
 {
