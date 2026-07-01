@@ -737,3 +737,57 @@ int main(void)
 
     return 0;
 }
+
+/* 24 */
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c;
+
+    printf("Enter values for a, b, and c (or press Ctrl+C to exit):\n");
+
+    // Loop repeatedly reads in values for a, b, and c
+    while (scanf("%lf %lf %lf", &a, &b, &c) == 3) {
+        
+        // Case 1: Extremely degenerate (a = 0 and b = 0)
+        if (a == 0 && b == 0) {
+            printf("extremely degenerate\n");
+        } 
+        // Case 2: Degenerate (a = 0 and b != 0)
+        else if (a == 0) {
+            double root = -c / b;
+            printf("degenerate: root = %f\n", root);
+        } 
+        // Case 3: General Case (a != 0)
+        else {
+            double disc = b * b - 4 * a * c;
+
+            // Subcase A: Two real roots (discriminant > 0)
+            if (disc > 0) {
+                double root1 = (-b + sqrt(disc)) / (2 * a);
+                double root2 = (-b - sqrt(disc)) / (2 * a);
+                printf("two real roots: root1 = %f, root2 = %f\n", root1, root2);
+            } 
+            // Subcase B: Multiple real roots (discriminant == 0)
+            else if (disc == 0) {
+                double root = -b / (2 * a);
+                printf("multiple real roots: root1 = %f, root2 = %f\n", root, root);
+            } 
+            // Subcase C: Two complex roots (discriminant < 0)
+            else {
+                double realPart = -b / (2 * a);
+                double imagPart = sqrt(-disc) / (2 * a);
+                
+                // Absolute value ensures the negative sign isn't doubled in the display
+                imagPart = fabs(imagPart); 
+
+                printf("two complex roots: root1 = %f + i*%f\n", realPart, imagPart);
+                printf("                   root2 = %f - i*%f\n", realPart, imagPart);
+            }
+        }
+        printf("\nEnter next values for a, b, and c (or press Ctrl+C to exit):\n");
+    }
+
+    return 0;
+}
