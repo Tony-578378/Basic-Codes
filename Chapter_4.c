@@ -868,3 +868,47 @@ int main(void)
 
     return 0;
 }
+
+/* 29 */
+#include <stdio.h>
+
+int main(void)
+{
+    int c;
+    int cnt = 0;
+    int digit_cnt = 0;
+
+    while ((c = getchar()) != EOF && c != 'E') { /* The loop terminates if E is entered. */
+        ++cnt;
+
+        if (c >= '0' && c <= '9')
+            ++digit_cnt;
+    }
+
+    printf("Total characters = %d\n", cnt);
+    printf("Digit characters = %d\n", digit_cnt);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    int i, n;
+    int total = 0;
+
+    i = -5;
+    n = 50;
+
+    while (i < n) {
+        ++i;
+
+        if (i != 0) {
+            total += i;
+            printf("i = %d and total = %d\n", i, total);
+        }
+    }
+
+    return 0;
+}
