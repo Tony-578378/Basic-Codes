@@ -912,3 +912,44 @@ int main(void)
 
     return 0;
 }
+
+/* 31 */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    double a, b, c;
+    double d;
+    double r1, r2;
+
+    printf("Enter a, b and c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    d = b * b - 4.0 * a * c;
+
+    if (a == 0.0)
+    {
+        printf("degenerate case\n");
+    }
+    else if (d < 0.0)
+    {
+        printf("imaginary roots\n");
+    }
+    else if (d == 0.0)
+    {
+        r1 = r2 = -b / (2.0 * a);
+        printf("r1 = %.2f\n", r1);
+        printf("r2 = %.2f\n", r2);
+    }
+    else
+    {
+        r1 = (-b + sqrt(d)) / (2.0 * a);
+        r2 = (-b - sqrt(d)) / (2.0 * a);
+
+        printf("r1 = %.2f\n", r1);
+        printf("r2 = %.2f\n", r2);
+    }
+
+    return 0;
+}
