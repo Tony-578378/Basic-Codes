@@ -953,3 +953,18 @@ int main(void)
 
     return 0;
 }
+
+/* 32 */
+#include <stdio.h>
+
+int main(void)
+{
+    for (putchar('1'); putchar('2'); putchar('3')) {
+        putchar('4');
+        continue;
+        putchar('5');
+    }
+
+    return 0;
+}
+/* 1243243243243243... gets printed */
