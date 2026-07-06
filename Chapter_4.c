@@ -968,3 +968,19 @@ int main(void)
     return 0;
 }
 /* 1243243243243243... gets printed */
+
+/* 34 */
+#include <stdio.h>
+
+int main(void)
+{
+    switch (1);     /* version 1 */
+
+    switch (1)
+        switch (1); /* version 2 */
+
+    printf("Program compiled and ran.\n");
+
+    return 0;
+}
+/* only warnings, no errors */
