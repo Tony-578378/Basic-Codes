@@ -1000,6 +1000,7 @@ int main(void)
 }
 
 /* 36 */
+/* Newton-Raphson method */
 #include <stdio.h>
 
 int main(void)
@@ -1014,7 +1015,7 @@ int main(void)
 
     do {
         x0 = x1;
-        x1 = 0.5 * (x0 + a / x0);
+        x1 = 0.5 * (x1 + a / x1);
         count++;
 
         printf("%d: x1 = %.15f, a - x1*x1 = %.15f\n",
