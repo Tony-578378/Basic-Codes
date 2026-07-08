@@ -998,3 +998,31 @@ int main(void)
 
     return 0;
 }
+
+/* 36 */
+#include <stdio.h>
+
+int main(void)
+{
+    double a, x0, x1;
+    int count = 0;
+
+    printf("Enter a positive real number: ");
+    scanf("%lf", &a);
+
+    x1 = 1.0;
+
+    do {
+        x0 = x1;
+        x1 = 0.5 * (x0 + a / x0);
+        count++;
+
+        printf("%d: x1 = %.15f, a - x1*x1 = %.15f\n",
+               count, x1, a - x1 * x1);
+
+    } while (x0 != x1);
+
+    printf("Square root of %.15f is approximately %.15f\n", a, x1);
+
+    return 0;
+}
