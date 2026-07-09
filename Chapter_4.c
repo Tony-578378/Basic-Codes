@@ -1005,13 +1005,11 @@ int main(void)
 
 int main(void)
 {
-    double a, x0, x1;
+    double a, x0, x1 = 1.0;
     int count = 0;
 
     printf("Enter a positive real number: ");
     scanf("%lf", &a);
-
-    x1 = 1.0;
 
     do {
         x0 = x1;
@@ -1035,15 +1033,13 @@ int main(void)
 {
     int n;
     int a;
-    double x0, x1;
-    int count;
+    double x0, x1 = 1.0;
+    int count = 0;
 
     printf("Enter n: ");
     scanf("%d", &n);
 
     for (a = 1; a <= n; a++) {
-        x1 = 1.0;
-        count = 0;
 
         do {
             x0 = x1;
