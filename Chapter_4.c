@@ -1027,3 +1027,32 @@ int main(void)
 
     return 0;
 }
+
+/* 37 */
+#include <stdio.h>
+
+int main(void)
+{
+    int n;
+    int a;
+    double x0, x1;
+    int count;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (a = 1; a <= n; a++) {
+        x1 = 1.0;
+        count = 0;
+
+        do {
+            x0 = x1;
+            x1 = 0.5 * (x1 + a / x1);
+            count++;
+        } while (x0 != x1);
+
+        printf("%d: sqrt = %.15f, iterations = %d\n", a, x1, count);
+    }
+
+    return 0;
+}
