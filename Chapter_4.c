@@ -1052,3 +1052,39 @@ int main(void)
 
     return 0;
 }
+
+/* 38 */
+/* estimate the constant e */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+    unsigned long long n = 1;
+    long double x;
+    long double previous = 0.0L;
+
+    printf("%-20s %-25s\n", "n", "x_n"); /* - means left alignment */
+
+    while (1) {
+        x = powl(1.0L + 1.0L / n, (long double)n);
+
+        printf("%-20llu %.20Lf\n", n, x);
+
+        /* Stop when increasing n no longer changes the result */
+        if (x == previous)
+            break;
+
+        previous = x;
+
+        /* Prevent integer overflow */
+        if (n > 1000000000000000000ULL)
+            break;
+
+        n *= 10;
+    }
+
+    printf("\nLibrary value of e: %.20Lf\n", expl(1.0L));
+
+    return 0;
+}
