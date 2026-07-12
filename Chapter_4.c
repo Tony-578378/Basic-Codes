@@ -1088,3 +1088,31 @@ int main(void)
 
     return 0;
 }
+
+/* 39 */
+#include <stdio.h>
+
+int main(void)
+{
+    long double e = 1.0L;
+    long double term = 1.0L;
+    long double previous;
+    int n = 1;
+
+    do {
+        previous = e;
+
+        term = term / n;   /* term becomes 1 / n! */
+        e = e + term;
+
+        printf("n = %d, term = %.20Lf, e = %.20Lf\n",
+               n, term, e);
+
+        n++;
+    } while (e != previous);
+
+    printf("\nApproximation of e: %.20Lf\n", e);
+    printf("Number of terms used: %d\n", n);
+
+    return 0;
+}
